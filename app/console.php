@@ -57,7 +57,7 @@ $console
     ->setDescription('generate fhir classes')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
         $xsdPath = __DIR__.'/../fhir-codegen-xsd/';
-        $generator = new \DCarbone\PHPFHIR\ClassGenerator\Generator($xsdPath, __DIR__.'/../src/');
+        $generator = new \DCarbone\PHPFHIR\ClassGenerator\Generator($xsdPath);
         $generator->generate();
     })
 ;

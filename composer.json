@@ -39,7 +39,7 @@
         "psr-4": {
             "Archivage\\": "src/Archivage",
             "SearchEngine\\": "src/SearchEngine",
-            "PHPFHIRGenerated\\": "src/PHPFHIRGenerated"
+            "PHPFHIRGenerated\\": "vendor/dcarbone/php-fhir/output/PHPFHIRGenerated"
         }
     },
     "scripts": {
