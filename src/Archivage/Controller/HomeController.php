@@ -69,6 +69,7 @@ class HomeController {
             }
 
             return $app['twig']->render('index.html.twig', array(
+                'form' => $form->createView(),
                 'data' => $form->getData(),
                 'fhir' => (string) $fhir_response->getBody(),
                 'img' => 'data: '.$contentType.';base64,'.$imageData
@@ -93,5 +94,5 @@ class HomeController {
             'form' => $form->createView()
         ));
     }
-    
+
 }
