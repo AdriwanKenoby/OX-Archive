@@ -1,0 +1,45 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+  {% if form is defined %}
+
+    {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+    <form action="#" method="post">
+      {{ form_widget(form) }}
+      <input type="submit" name="submit" />
+    </form>
+
+  {% else %}
+
+    {% for flashMessage in app.session.flashbag.get('error') %}
+      <div class="alert alert-danger">
+        {{ flashMessage }}
+      </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('success') %}
+      <div class="alert alert-success">
+        {{ flashMessage }}
+      </div>
+    {% endfor %}
+
+    <h2>Posted data</h2>
+
+    <ul>
+      {% for key, value in data %}
+        <li>{{ key }} : {{ value|date("Y-m-d") }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>fhir</h2>
+
+    <pre>{{ fhir }}</pre>
+
+    <img src="{{ img }}" alt="" />
+    
+  {% endif %}
+
+{% endblock %}
