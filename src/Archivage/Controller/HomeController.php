@@ -6,7 +6,6 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Archivage\Form\Type\SearchByPeriodType;
 use Archivage\Form\Type\SearchArchiveType;
-use SearchEngine\EngineBuilder;
 use PHPFHIRGenerated\PHPFHIRResponseParser;
 
 class HomeController {
