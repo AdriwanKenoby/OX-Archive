@@ -5,21 +5,21 @@
 {% block content %}
 
     {% for flashMessage in app.session.flashbag.get('error') %}
-      <div class="alert alert-danger">
-        {{ flashMessage }}
-      </div>
+        <div class="alert alert-danger">
+          {{ flashMessage }}
+        </div>
     {% endfor %}
 
     {% for flashMessage in app.session.flashbag.get('success') %}
-      <div class="alert alert-success">
-        {{ flashMessage }}
-      </div>
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
     {% endfor %}
 
     {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
     <form action="#" method="post">
-      {{ form_widget(form) }}
-      <input type="submit" name="submit" />
+        {{ form_widget(form) }}
+        <input type="submit" name="submit" />
     </form>
 
     {% if data is defined %}
@@ -34,9 +34,15 @@
     {% if fhir is defined %}
         <h2>fhir</h2>
         <pre>{{ fhir }}</pre>
+
+
+        <div id="js-vars" data-vars="{{ js_vars|json_encode|e('html_attr') }}" />
+
+        <script src="{{ asset('js/fhir.js') }}"></script>
     {% endif %}
-    
+
     {% if img is defined %}
         <img src="{{ img }}" alt="" />
     {% endif %}
+
 {% endblock %}

@@ -37,11 +37,12 @@ class HomeController {
 
             $parser = new PHPFHIRResponseParser();
             $fhir_response = $app['fhir_client']->get('DocumentReference/206352/_history/1');
-            $object = $parser->parse((string)$fhir_response->getBody());
+            $fhir_str = (string)$fhir_response->getBody();
+            $fhir_object = $parser->parse($fhir_str);
             //$object = json_decode((string)$fhir_response->getBody());
             //$json = json_encode($object);
 
-            $attachment = $object->content[0]->attachment;
+            $attachment = $fhir_object->content[0]->attachment;
             $imageData = $attachment->data->value;
             $contentType = $attachment->contentType->value;
             $title = $attachment->title->value;
@@ -65,10 +66,12 @@ class HomeController {
                 $app['session']->getFlashBag()->add('error', $filepath.' already exist nothing done');
             }
 
+            $app['js_vars']->fhir = $fhir_str;
+
             return $app['twig']->render('index.html.twig', array(
                 'form' => $form->createView(),
                 'data' => $form->getData(),
-                'fhir' => (string) $fhir_response->getBody(),
+                'fhir' => $fhir_str,
                 'img' => 'data: '.$contentType.';base64,'.$imageData
             ));
         }

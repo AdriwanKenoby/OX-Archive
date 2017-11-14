@@ -6,6 +6,7 @@ use Monolog\Logger;
 
 $app['twig.path'] = array(__DIR__.'/../views');
 $app['twig.options'] = array('cache' => __DIR__.'/../var/cache/twig');
+
 $app['translator.domains'] = array();
 
 $app['db.options'] = array(

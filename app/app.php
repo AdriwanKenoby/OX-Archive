@@ -29,9 +29,10 @@ $app->register(new DoctrineServiceProvider());
 $app->register(new SessionServiceProvider());
 $app->register(new SecurityServiceProvider());
 $app->register(new MonologServiceProvider());
-
+$app['js_vars'] = new stdClass;
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     // add custom globals, filters, tags, ...
+    $twig->addGlobal('js_vars', $app['js_vars']);
     return $twig;
 });
 
@@ -41,8 +42,8 @@ $app['dao.user'] = function ($app) {
 
 $app['server_fhir_uri'] = 'https://fhirtest.uhn.ca/baseDstu3/';
 $app['fhir_client'] = new Client([
-// Base URI is used with relative requests
-'base_uri' => $app['server_fhir_uri']
+    // Base URI is used with relative requests
+    'base_uri' => $app['server_fhir_uri']
 ]);
 
 $app['elastic.host'] = "localhost";

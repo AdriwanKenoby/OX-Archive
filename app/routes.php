@@ -11,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Archivage\Entity\User;
 use Archivage\Form\Type\UserType;
 
+$app->before(function (Request $request) use ($app) {
+    $app['js_vars']->myGlobalVariable = 'globale value'; 
+});
+
 $app->get('/', "Archivage\Controller\HomeController::indexAction")
 ->bind('home');
 
