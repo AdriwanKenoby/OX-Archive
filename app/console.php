@@ -18,7 +18,7 @@ $console
     ->addArgument('document', InputArgument::REQUIRED, 'document to index')
     ->setDescription('index document in elasticsearch')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
-        EngineBuilder::create()->build()->index($input->getArgument('document'));
+        $app['search_engine']->index($input->getArgument('document'));
     })
 ;
 
@@ -30,7 +30,7 @@ $console
     ->addArgument('query', InputArgument::REQUIRED, 'query to search document')
     ->setDescription('search a document in elasticsearch')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
-        $result = EngineBuilder::create()->build()->search($input->getArgument('query'));
+        $result = $app['search_engine']->search($input->getArgument('query'));
         foreach ($result as $hit) {
             $output->writeln(sprintf("%0.8f\t%s\n", $hit['score'], $hit['path']));
         }
@@ -45,7 +45,7 @@ $console
     ->addArgument('document', InputArgument::REQUIRED, 'document to delete')
     ->setDescription('delete a document from elasticsearch')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
-        $result = EngineBuilder::create()->build()->delete($input->getArgument('document'));
+        $result = $app['search_engine']->delete($input->getArgument('document'));
     })
 ;
 

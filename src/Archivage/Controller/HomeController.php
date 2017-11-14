@@ -36,10 +36,8 @@ class HomeController {
         if ($form->isSubmitted() && $form->isValid()) {
             // perform some action...
 
-            $client = $app['guzzle']->getClient();
             $parser = new PHPFHIRResponseParser();
-
-            $fhir_response = $client->get('DocumentReference/206352/_history/1');
+            $fhir_response = $app['fhir_client']->get('DocumentReference/206352/_history/1');
             $object = $parser->parse((string)$fhir_response->getBody());
             //$object = json_decode((string)$fhir_response->getBody());
             //$json = json_encode($object);
@@ -60,7 +58,7 @@ class HomeController {
                 }
                 $app['monolog.prod']->info(sprintf("User '%s' has download archive %s.", $user->getUsername(), realpath($filepath)));
 
-                EngineBuilder::create()->build()->index($filepath, array(
+                $app['search_engine']->index($filepath, array(
                     "hash" => $hash
                 ));
                 $app['session']->getFlashBag()->add('success', realpath($filepath).' store in FS and indexed');
@@ -85,7 +83,7 @@ class HomeController {
         $form = $app['form.factory']->create(SearchArchiveType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $documents = EngineBuilder::create()->build()->search($form->getData()['query']);
+            $documents = $app['search_engine']->search($form->getData()['query']);
             return $app['twig']->render('search.html.twig', array(
                 'documents' => $documents,
             ));

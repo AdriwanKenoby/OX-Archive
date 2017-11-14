@@ -13,6 +13,8 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\MonologServiceProvider;
+use GuzzleHttp\Client;
+use SearchEngine\EngineBuilder;
 
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
@@ -38,8 +40,21 @@ $app['dao.user'] = function ($app) {
 };
 
 $app['server_fhir_uri'] = 'https://fhirtest.uhn.ca/baseDstu3/';
-$app['guzzle'] = function ($app) {
-    return new Archivage\Services\Guzzle($app['server_fhir_uri']);
-};
+$app['fhir_client'] = new Client([
+// Base URI is used with relative requests
+'base_uri' => $app['server_fhir_uri']
+]);
+
+$app['elastic.host'] = "localhost";
+$app['elastic.port'] = 9200;
+$app['search_engine.index'] = "ox-archive";
+$app['search_engine.type'] = "document";
+
+$app['search_engine'] = EngineBuilder::create()->build(
+    $app['elastic.host'],
+    $app['elastic.port'],
+    $app['search_engine.index'],
+    $app['search_engine.type']
+);
 
 return $app;

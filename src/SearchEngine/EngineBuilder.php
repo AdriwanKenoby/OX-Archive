@@ -37,8 +37,8 @@ class EngineBuilder {
      *
      * @return  EngineBuilder  A EngineBuilder
      */
-    public function build() {
-        return new Engine;
+    public function build($host, $port, $index, $type) {
+        return new Engine($host, $port, $index, $type);
     }
 
 }

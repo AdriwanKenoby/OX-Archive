@@ -17,6 +17,12 @@ namespace SearchEngine;
 class Engine {
 
     /**
+    * Elasticsearch conf
+    */
+    private $host;
+    private $port;
+
+    /**
      * Engine client
      */
     private $client;
@@ -34,9 +40,11 @@ class Engine {
     /**
      * Constructor
      */
-    public function __construct() {
-        $this->index = 'ox-archivage';
-        $this->type = 'document';
+    public function __construct($host, $port, $index, $type) {
+        $this->host = $host;
+        $this->port = $port;
+        $this->index = $index;
+        $this->type = $type;
     }
 
     /**
@@ -46,7 +54,9 @@ class Engine {
      */
     protected function getClient() {
         if (!isset($this->client)) {
-            $this->client = \Elasticsearch\ClientBuilder::create()->build();
+            $this->client = \Elasticsearch\ClientBuilder::create()
+            ->setHosts([$this->host.':'.$this->port])
+            ->build();
         }
 
         return $this->client;
