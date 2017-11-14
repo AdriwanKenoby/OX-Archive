@@ -11,7 +11,7 @@ $console = new Application('ox-archivage', 'n/a');
 $console->getDefinition()->addOption(new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev'));
 $console->setDispatcher($app['dispatcher']);
 $console
-    ->register('archivage:document:index')
+    ->register('archive:document:index')
     ->setDefinition(array(
         // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help'),
     ))
@@ -23,7 +23,7 @@ $console
 ;
 
 $console
-    ->register('archivage:document:search')
+    ->register('archive:document:search')
     ->setDefinition(array(
         // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help'),
     ))
@@ -38,7 +38,7 @@ $console
 ;
 
 $console
-    ->register('archivage:document:delete')
+    ->register('archive:document:delete')
     ->setDefinition(array(
         // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help'),
     ))
@@ -50,12 +50,12 @@ $console
 ;
 
 $console
-    ->register('archivage:fhir:generate-classes')
+    ->register('archive:fhir:generate-classes')
     ->setDefinition(array(
         // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help'),
     ))
     ->setDescription('generate fhir classes')
-    ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+    ->setCode(function (InputInterface $input, OutputInterface $output) {
         $xsdPath = __DIR__.'/../fhir-codegen-xsd/';
         $generator = new \DCarbone\PHPFHIR\ClassGenerator\Generator($xsdPath);
         $generator->generate();
