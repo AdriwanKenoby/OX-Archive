@@ -101,7 +101,7 @@ class Engine {
      *
      * @return  void
      */
-    public function delete($path) {        
+    public function delete($path) {
         $id = md5(realpath($path));
         $params = ['index' => $this->index, 'type' => $this->type, 'id' => $id];
         $this->getClient()->delete($params);
