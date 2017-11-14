@@ -40,7 +40,6 @@ class HomeController {
             $fhir_str = (string)$fhir_response->getBody();
             $fhir_object = $parser->parse($fhir_str);
             //$object = json_decode((string)$fhir_response->getBody());
-            //$json = json_encode($object);
 
             $attachment = $fhir_object->content[0]->attachment;
             $imageData = $attachment->data->value;

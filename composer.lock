@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc1b3791431293045284155f58396a50",
+    "content-hash": "23ac6bd2f59319d3f7bb02be3b86aff8",
     "packages": [
         {
             "name": "dcarbone/php-fhir",
@@ -3255,7 +3255,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.3.11",
+            "version": "v3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
