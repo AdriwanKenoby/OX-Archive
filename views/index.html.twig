@@ -21,26 +21,9 @@
         {{ form_widget(form) }}
         <input type="submit" name="submit" />
     </form>
-
-    {% if data is defined %}
-        <h2>Posted data</h2>
-        <ul>
-          {% for key, value in data %}
-            <li>{{ key }} : {{ value|date("Y-m-d") }}</li>
-          {% endfor %}
-        </ul>
-    {% endif %}
-
-    {% if fhir is defined %}
-        <h2>fhir</h2>
-        <pre>{{ fhir }}</pre>
-
-        <div id="js-vars" data-vars="{{ js_vars|json_encode|e('html_attr') }}" />
-        <script src="{{ asset('js/fhir.js') }}"></script>
-    {% endif %}
-
-    {% if img is defined %}
-        <img src="{{ img }}" alt="" />
-    {% endif %}
+    
+    <div id="grid-sejours"></div>
+    <div id="button-archivage"></div>
+    <script src="{{ asset('js/display_sejours.js') }}"></script>
 
 {% endblock %}

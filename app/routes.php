@@ -12,7 +12,7 @@ use Archivage\Entity\User;
 use Archivage\Form\Type\UserType;
 
 $app->before(function (Request $request) use ($app) {
-    $app['js_vars']->myGlobalVariable = 'globale value'; 
+    // set some global javascript variable
 });
 
 $app->get('/', "Archivage\Controller\HomeController::indexAction")

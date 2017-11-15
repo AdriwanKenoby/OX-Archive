@@ -3,15 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+    {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+    <form action="#" method="post">
+        {{ form_widget(form) }}
+        <input type="submit" name="submit" />
+    </form>
 
-    {% if form is defined %}
-
-      {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
-      <form action="#" method="post">
-          {{ form_widget(form) }}
-          <input type="submit" name="submit" />
-      </form>
-    {% else %}
+    {% if documents is defined %}
         <div class="tab-pane">
             {% if documents %}
             <div class="table-responsive">

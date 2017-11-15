@@ -40,10 +40,15 @@ $app['dao.user'] = function ($app) {
     return new Archivage\DAO\UserDAO($app['db']);
 };
 
-$app['server_fhir_uri'] = 'https://fhirtest.uhn.ca/baseDstu3/';
-$app['fhir_client'] = new Client([
+$app['mediboard_host'] = "http://192.168.1.21/mediboard/";
+$app['mediboard_login'] = "univlr";
+$app['mediboard_pass'] = "lrUniv17";
+$app['mediboard_module'] = "tp1_mjahed_veteau";
+$app['mediboard_tab'] = "Encounter";
+
+$app['mediboard_client'] = new Client([
     // Base URI is used with relative requests
-    'base_uri' => $app['server_fhir_uri']
+    'base_uri' => $app['mediboard_host']
 ]);
 
 $app['elastic.host'] = "localhost";
