@@ -4,43 +4,243 @@
 
 {% block content %}
 
-    {% for flashMessage in app.session.flashbag.get('error') %}
-        <div class="alert alert-danger">
-          {{ flashMessage }}
-        </div>
-    {% endfor %}
+    <div id="container-dates">
+        <div id="form-dates"></div>
+        <div id="button-dates"></div>
+    </div>
 
-    {% for flashMessage in app.session.flashbag.get('success') %}
-        <div class="alert alert-success">
+    <div id="grid-sejours"></div>
+    <div id="button-archivage"></div>
+    <div id="loadpanel"></div>
+    <script>
+
+        $(function() {
+
+            $("#form-dates").dxForm({
+
+                showColonAfterLabel: false,
+                alignItemLabels: true,
+                validationGroup: "validationGroup",
+                colCount: 2,
+                items: [
+                    {
+                        label: { text: "Date de début" },
+                        name: "date_debut",
+                        editorType: "dxDateBox",
+                        editorOptions: {
+
+                            dateSerializationFormat: "yyyy-MM-dd"
+                        },
+                        validationRules: [{
+
+                            type: "required",
+                            message: "Requis"
+                        }]
+                    },
+                    {
+                        label: { text: "Date de fin" },
+                        name: "date_fin",
+                        editorType: "dxDateBox",
+                        editorOptions: {
+
+                            dateSerializationFormat: "yyyy-MM-dd"
+                        },
+                        validationRules: [{
+
+                            type: "required",
+                            message: "Requis"
+                        }]
+                    }
+                ]
+            });
+
+            $("#button-dates").dxButton({
+
+                text: "Rechercher",
+                type: "success",
+                validationGroup: "validationGroup",
+                onClick: function (e) {
+
+                    var result = e.validationGroup.validate();
+
+                    if (result.isValid) {
+
+                        var form = $("#form-dates").dxForm("instance"),
+                            data = form.option("formData"),
+                            url  = "http://localhost/mediboard/index.php?login=univlr:lrUniv17&m=TP1&tab=Encounter";
+                        $.ajax({
+
+                            type: "GET",
+                            url: url,
+                            data: {
+
+                                date_min: data.date_debut,
+                                date_max: data.date_fin
+                            }
+
+                        })
+                        .done(function(result) { archivage(result); })
+                        .fail(function(result) {
+
+                            console.log(result);
+                        });
+                    }
+                }
+            });
+
+            var loadpanel = $("#loadpanel").dxLoadPanel({
+
+                width: 300,
+                message: "Chargement...",
+                visible: false,
+                shading: true,
+                shadingColor: "rgba(0,0,0,0.4)",
+                position: { of: "#container-dates" }
+            }).dxLoadPanel("instance");
+        });
+
+        function archivage(result) {
+
+            var data = [];
+
+            console.log(result);
+            result.entry.forEach(function(el) {
+
+                data.push({ entree: el.resource.period.start, sortie: el.resource.period.end, id: el.resource.id, fullUrl: el.fullUrl });
+            });
+
+            $("#grid-sejours").dxDataGrid({
+
+                dataSource: data,
+                allowColumnResizing: true,
+                allowColumnReordering: true,
+                hoverStateEnabled: true,
+                showRowLines: true,
+                showBorders: true,
+                headerFilter: { visible: true },
+                loadPanel: { enabled: true },
+                paging: { pageSize: 25 },
+                pager: { showInfo: true	},
+                selection: {
+
+                    mode: "multiple",
+                    showCheckBoxesMode: "always"
+                },
+                columns: [
+                    {
+                        dataField: "entree",
+                        caption: "Entrée",
+                        width: 300,
+                        dataType: "date"
+                    },
+                    {
+                        dataField: "sortie",
+                        caption: "Sortie",
+                        width: 300,
+                        dataType: "date"
+                    }
+                ]
+            });
+
+            $("#button-archivage").dxButton({
+
+                text: "Archiver",
+                type: "success",
+                onClick: function (e) {
+
+                    var grid         = $("#grid-sejours").dxDataGrid("instance"),
+                        selectedRows = grid.getSelectedRowsData();
+
+
+                    selectedRows.forEach(function(el) {
+
+                        console.log(el);
+
+                        var url = el.fullUrl;
+
+                        $.ajax({
+
+                            type: "GET",
+                            url: url
+                        })
+                            .done(function(result) {
+
+                                console.log(result);
+                            })
+                            .fail(function(result) {
+
+                                console.log(result);
+                            });
+                    });
+                }
+            })
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {#
+    {% if form is defined %}
+
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        <form action="#" method="post">
+          {{ form_widget(form) }}
+          <input type="submit" name="submit" />
+        </form>
+
+    {% else %}
+
+        {% for flashMessage in app.session.flashbag.get('error') %}
+          <div class="alert alert-danger">
             {{ flashMessage }}
-        </div>
-    {% endfor %}
+          </div>
+        {% endfor %}
 
-    {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
-    <form action="#" method="post">
-        {{ form_widget(form) }}
-        <input type="submit" name="submit" />
-    </form>
+        {% for flashMessage in app.session.flashbag.get('success') %}
+          <div class="alert alert-success">
+            {{ flashMessage }}
+          </div>
+        {% endfor %}
 
-    {% if data is defined %}
-        <h2>Posted data</h2>
-        <ul>
-          {% for key, value in data %}
-            <li>{{ key }} : {{ value|date("Y-m-d") }}</li>
-          {% endfor %}
-        </ul>
+        <div id="grid-sejours"></div>
+        <div id="button-archivage"></div>
+
+
+
     {% endif %}
-
-    {% if fhir is defined %}
-        <h2>fhir</h2>
-        <pre>{{ fhir }}</pre>
-
-        <div id="js-vars" data-vars="{{ js_vars|json_encode|e('html_attr') }}" />
-        <script src="{{ asset('js/fhir.js') }}"></script>
-    {% endif %}
-
-    {% if img is defined %}
-        <img src="{{ img }}" alt="" />
-    {% endif %}
-
+    #}
 {% endblock %}

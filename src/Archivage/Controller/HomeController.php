@@ -4,8 +4,8 @@ namespace Archivage\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Archivage\Form\Type\SearchByPeriodType;
 use Archivage\Form\Type\SearchArchiveType;
+use SearchEngine\EngineBuilder;
 use PHPFHIRGenerated\PHPFHIRResponseParser;
 
 class HomeController {
@@ -23,29 +23,8 @@ class HomeController {
         ));
     }
 
-    /**
-     * Home page controller.
-     *
-     * @param Application $app Silex application
-     */
-    public function indexAction(Request $request, Application $app) {
-        $form = $app['form.factory']->create(SearchByPeriodType::class);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // perform some action...
-
-            $parser = new PHPFHIRResponseParser();
-            $fhir_response = $app['fhir_client']->get('DocumentReference/206352/_history/1');
-            $fhir_str = (string)$fhir_response->getBody();
-            $fhir_object = $parser->parse($fhir_str);
-            //$object = json_decode((string)$fhir_response->getBody());
-
-            $attachment = $fhir_object->content[0]->attachment;
-            $imageData = $attachment->data->value;
-            $contentType = $attachment->contentType->value;
-            $title = $attachment->title->value;
-            $hash = $attachment->hash->value;
+    /*
+     *             $hash = $attachment->hash->value;
             $filepath = __DIR__.'/../../../archives/'.$title.'.'.$contentType;
 
             if (!file_exists($filepath)) {
@@ -57,34 +36,20 @@ class HomeController {
                 }
                 $app['monolog.prod']->info(sprintf("User '%s' has download archive %s.", $user->getUsername(), realpath($filepath)));
 
-                $app['search_engine']->index($filepath, array(
+                EngineBuilder::create()->build()->index($filepath, array(
                     "hash" => $hash
                 ));
                 $app['session']->getFlashBag()->add('success', realpath($filepath).' store in FS and indexed');
             } else {
                 $app['session']->getFlashBag()->add('error', $filepath.' already exist nothing done');
             }
-
-            $app['js_vars']->fhir = $fhir_str;
-
-            return $app['twig']->render('index.html.twig', array(
-                'form' => $form->createView(),
-                'data' => $form->getData(),
-                'fhir' => $fhir_str,
-                'img' => 'data: '.$contentType.';base64,'.$imageData
-            ));
-        }
-
-        return $app['twig']->render('index.html.twig', array(
-            'form' => $form->createView()
-        ));
-    }
+     */
 
     public function searchAction(Request $request, Application $app) {
         $form = $app['form.factory']->create(SearchArchiveType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $documents = $app['search_engine']->search($form->getData()['query']);
+            $documents = EngineBuilder::create()->build()->search($form->getData()['query']);
             return $app['twig']->render('search.html.twig', array(
                 'documents' => $documents,
             ));
@@ -93,5 +58,5 @@ class HomeController {
             'form' => $form->createView()
         ));
     }
-
+    
 }
