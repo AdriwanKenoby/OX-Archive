@@ -6,7 +6,6 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Archivage\Form\Type\SearchArchiveType;
 use SearchEngine\EngineBuilder;
-use PHPFHIRGenerated\PHPFHIRResponseParser;
 
 class HomeController {
 
@@ -49,7 +48,7 @@ class HomeController {
         $form = $app['form.factory']->create(SearchArchiveType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $documents = EngineBuilder::create()->build()->search($form->getData()['query']);
+            $documents = $app['search_engine']->search($form->getData()['query']);
             return $app['twig']->render('search.html.twig', array(
                 'documents' => $documents,
             ));

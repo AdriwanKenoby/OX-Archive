@@ -17,6 +17,9 @@ $app->get('/', "Archivage\Controller\SearchByDate::indexAction")
 $app->post('/', "Archivage\Controller\SearchByDate::indexAction")
 ->bind('search_by_period');
 
+$app->post('/archivage', "Archivage\Controller\Archivage::archivage")
+->bind('archivage');
+
 // Login form
 $app->get('/login', "Archivage\Controller\HomeController::loginAction")
 ->bind('login');

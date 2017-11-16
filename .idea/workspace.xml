@@ -2,216 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="7072aa74-1af4-4e27-b310-2168c41bfec9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/account.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/activitydefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/activitygroup.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/adverseevent.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/allergyintolerance.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/appointment.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/appointmentresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/auditevent.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/basic.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/binary.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/bodysite.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/bundle.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/capabilitystatement.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/careplan.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/careteam.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/catalog.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/chargeitem.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/claim.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/claimresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/clinicalimpression.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/codesystem.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/communication.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/communicationrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/compartmentdefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/composition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/conceptmap.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/condition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/conditiondefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/conformance.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/consent.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/contract.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/contraindication.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/coverage.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/dataelement.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/decisionsupportrule.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/decisionsupportservicemodule.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/detectedissue.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/device.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/devicecomponent.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/devicemetric.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/devicerequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/deviceuserequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/deviceusestatement.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/diagnosticorder.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/diagnosticreport.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/diagnosticrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/documentmanifest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/documentreference.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/eligibilityrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/eligibilityresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/encounter.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/endpoint.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/enrollmentrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/enrollmentresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/episodeofcare.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/expansionprofile.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/explanationofbenefit.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/familymemberhistory.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/fhir-all.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/fhir-base.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/fhir-single.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/fhir-xhtml.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/flag.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/goal.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/graphdefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/group.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/guidancerequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/guidanceresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/healthcareservice.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/imagingexcerpt.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/imagingmanifest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/imagingobjectselection.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/imagingstudy.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/immunization.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/immunizationrecommendation.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/implementationguide.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/library.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/linkage.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/list.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/location.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/measure.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/measurereport.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/media.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medication.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medicationadministration.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medicationdispense.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medicationorder.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medicationprescription.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medicationrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/medicationstatement.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/messagedefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/messageheader.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/moduledefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/modulemetadata.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/namingsystem.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/nutritionorder.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/nutritionrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/observation.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/operationdefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/operationoutcome.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/order.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/orderresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/orderset.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/organization.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/parameters.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/patient.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/paymentnotice.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/paymentreconciliation.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/person.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/plandefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/practitioner.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/practitionerrole.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/procedure.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/procedurerequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/processrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/processresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/protocol.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/provenance.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/questionnaire.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/questionnaireanswers.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/questionnaireresponse.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/referralrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/relatedperson.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/requestgroup.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/researchstudy.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/researchsubject.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/riskassessment.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/schedule.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/searchparameter.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/sequence.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/servicedefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/slot.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/specimen.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/structuredefinition.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/structuremap.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/subscription.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/substance.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/supply.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/supplydelivery.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/supplyrequest.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/task.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/testreport.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/testscript.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/valueset.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/visionprescription.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/xml.xsd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fhir-codegen-xsd/xmldsig-core-schema.xsd" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../mediboard/modules" afterPath="$PROJECT_DIR$/../../mediboard/modules" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.db" afterPath="$PROJECT_DIR$/app/app.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/Sample.gif" afterPath="$PROJECT_DIR$/archives/Sample.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.php" afterPath="$PROJECT_DIR$/app/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/console.php" afterPath="$PROJECT_DIR$/app/console.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/Sample.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OX-Archive.iml" afterPath="$PROJECT_DIR$/.idea/OX-Archive.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/console" afterPath="$PROJECT_DIR$/bin/console" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/dev.php" afterPath="$PROJECT_DIR$/config/dev.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/prod.php" afterPath="$PROJECT_DIR$/config/prod.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/content.sql" afterPath="$PROJECT_DIR$/db/content.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/structure.sql" afterPath="$PROJECT_DIR$/db/structure.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/Archivage/Controller/AdminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/Controller/HomeController.php" afterPath="$PROJECT_DIR$/src/Archivage/Controller/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/DAO/DAO.php" afterPath="$PROJECT_DIR$/src/Archivage/DAO/DAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/DAO/UserDAO.php" afterPath="$PROJECT_DIR$/src/Archivage/DAO/UserDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/Entity/User.php" afterPath="$PROJECT_DIR$/src/Archivage/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/Form/Type/SearchArchiveType.php" afterPath="$PROJECT_DIR$/src/Archivage/Form/Type/SearchArchiveType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/Form/Type/SearchByPeriodType.php" afterPath="$PROJECT_DIR$/src/Archivage/Form/Type/SearchByPeriodType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Archivage/Form/Type/UserType.php" afterPath="$PROJECT_DIR$/src/Archivage/Form/Type/UserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SearchEngine/DefaultParser.php" afterPath="$PROJECT_DIR$/src/SearchEngine/DefaultParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SearchEngine/ImageParserTrait.php" afterPath="$PROJECT_DIR$/src/SearchEngine/ImageParserTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SearchEngine/JpgParser.php" afterPath="$PROJECT_DIR$/src/SearchEngine/JpgParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AppTest.php" afterPath="$PROJECT_DIR$/tests/AppTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/OX-Archivage.xmi" afterPath="$PROJECT_DIR$/tests/OX-Archivage.xmi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin.html.twig" afterPath="$PROJECT_DIR$/views/admin.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/consult_logs.html.twig" afterPath="$PROJECT_DIR$/views/consult_logs.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/errors/404.html.twig" afterPath="$PROJECT_DIR$/views/errors/404.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/errors/4xx.html.twig" afterPath="$PROJECT_DIR$/views/errors/4xx.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/errors/500.html.twig" afterPath="$PROJECT_DIR$/views/errors/500.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/errors/5xx.html.twig" afterPath="$PROJECT_DIR$/views/errors/5xx.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/errors/default.html.twig" afterPath="$PROJECT_DIR$/views/errors/default.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html.twig" afterPath="$PROJECT_DIR$/views/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.html.twig" afterPath="$PROJECT_DIR$/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.html.twig" afterPath="$PROJECT_DIR$/views/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/search.html.twig" afterPath="$PROJECT_DIR$/views/search.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/user_form.html.twig" afterPath="$PROJECT_DIR$/views/user_form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index_dev.php" afterPath="$PROJECT_DIR$/web/index_dev.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/fhir.js" afterPath="$PROJECT_DIR$/web/js/fhir.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/web/lib/bootstrap/css/bootstrap.min.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/web/lib/bootstrap/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/web/lib/bootstrap/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/bootstrap/js/npm.js" afterPath="$PROJECT_DIR$/web/lib/bootstrap/js/npm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/lib/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/web/lib/jquery/jquery.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -221,7 +19,70 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-407">
+              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/search.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="197" column="5" lean-forward="false" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Archivage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/Archivage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+              <folding>
+                <element signature="e#121#143#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -237,8 +98,12 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Archivage/Form/Type/SearchByPeriodType.php" />
         <option value="$PROJECT_DIR$/src/Archivage/Controller/SearchByDate.php" />
-        <option value="$PROJECT_DIR$/views/index.html.twig" />
         <option value="$PROJECT_DIR$/../../mediboard/modules/TP1/Encounter.php" />
+        <option value="$PROJECT_DIR$/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/src/Archivage/Controller/HomeController.php" />
+        <option value="$PROJECT_DIR$/views/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Archivage/Controller/Archivage.php" />
       </list>
     </option>
   </component>
@@ -271,35 +136,58 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mediboard" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mediboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mediboard" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="TP1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Archivage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Archivage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="SearchEngine" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="OX-Archive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OX-Archive" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mediboard" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -333,14 +221,19 @@
       <workItem from="1510755117201" duration="175000" />
       <workItem from="1510755338640" duration="156000" />
       <workItem from="1510755525614" duration="49000" />
+      <workItem from="1510756167530" duration="6019000" />
+      <workItem from="1510819147542" duration="443000" />
+      <workItem from="1510819942730" duration="14688000" />
+      <workItem from="1510841217078" duration="4027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8138000" />
+    <option name="totallyTimeSpent" value="33315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="313" y="103" width="1922" height="936" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -360,6 +253,25 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -376,6 +288,99 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="49" column="55" lean-forward="false" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/Archivage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="49" lean-forward="false" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+          <folding>
+            <element signature="e#121#143#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2988">
+          <caret line="166" column="56" lean-forward="false" selection-start-line="166" selection-start-column="56" selection-end-line="166" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/SearchByDate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/SearchByDate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -439,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Archivage/Form/Type/SearchByPeriodType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -453,52 +451,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.php">
+    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/getSejour.php" />
+    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/formulaire.php" />
+    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/index.php" />
+    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/Encounter.php" />
+    <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="42" column="61" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="61" />
+        <state relative-caret-position="288">
+          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/archives/14/Sample.gif" />
     <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/SearchByDate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/getSejour.php">
+    <entry file="file://$PROJECT_DIR$/src/SearchEngine/Engine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-545">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/formulaire.php">
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-407">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/index.php">
+    <entry file="file://$PROJECT_DIR$/app/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../mediboard/modules/TP1/Encounter.php">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="21" />
+        <state relative-caret-position="180">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Archivage/Controller/Archivage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+          <folding>
+            <element signature="e#121#143#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1236">
-          <caret line="81" column="49" lean-forward="false" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        <state relative-caret-position="269">
+          <caret line="197" column="5" lean-forward="false" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -103,10 +103,9 @@
 
             var data = [];
 
-            console.log(result);
             result.entry.forEach(function(el) {
 
-                data.push({ entree: el.resource.period.start, sortie: el.resource.period.end, id: el.resource.id, fullUrl: el.fullUrl });
+                data.push({ entree: el.resource.period.start, sortie: el.resource.period.end, id: el.resource.id, patient: el.resource.subject.display });
             });
 
             $("#grid-sejours").dxDataGrid({
@@ -135,9 +134,12 @@
                     },
                     {
                         dataField: "sortie",
-                        caption: "Sortie",
                         width: 300,
                         dataType: "date"
+                    },
+                    {
+                        dataField: "patient",
+                        width: 300
                     }
                 ]
             });
@@ -146,34 +148,70 @@
 
                 text: "Archiver",
                 type: "success",
-                onClick: function (e) {
+                onClick: function(e) {
 
                     var grid         = $("#grid-sejours").dxDataGrid("instance"),
                         selectedRows = grid.getSelectedRowsData();
 
-
                     selectedRows.forEach(function(el) {
 
-                        console.log(el);
+                        getDocuments(el)
+                        .done(function(result) {
+                            console.log(result);
+                            var docs = result.entry,
+                                a = {
 
-                        var url = el.fullUrl;
+                                    idSejour: el.id,
+                                    dateEntree: el.entree,
+                                    dateSortie: el.sortie,
+                                    patient: el.patient,
+                                    documents: docs
+                                },
+                                str = JSON.stringify(a);
+                            //console.log(str);
 
-                        $.ajax({
+                            $.ajax({
 
-                            type: "GET",
-                            url: url
-                        })
-                            .done(function(result) {
+                                type: "POST",
+                                url: "/OX-Archive/web/index.php/archivage",
+                                data: { "str": str },
+                                statusCode: {
 
-                                console.log(result);
-                            })
-                            .fail(function(result) {
+                                    200: function() {
 
-                                console.log(result);
+                                        console.log("success statusCode")
+                                    },
+                                    400: function() {
+
+                                        console.log("fail dir statusCode")
+                                    },
+                                    401: function() {
+
+                                        console.log("fail file statusCode")
+                                    }
+                                }
                             });
+                        })
+                        .fail(function(result) {
+
+                            console.log(result);
+                        });
                     });
                 }
             })
+        }
+
+        function getDocuments(sejour) {
+
+            var id  = sejour.id,
+                url = "http://localhost/mediboard/index.php?login=univlr:lrUniv17&m=TP1&tab=DocumentReference";
+
+            return $.ajax({
+
+                type: "GET",
+                url: url,
+                data: { sejour_id: id }
+            });
         }
     </script>
 
