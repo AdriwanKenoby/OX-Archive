@@ -46,7 +46,7 @@ if( JsVars.fhir !== undefined ) {
             {
                 dataField: "status",
                 caption: "Status",
-                width: 50,
+                width: 100,
                 dataType: "string"
             }
         ]
@@ -59,19 +59,19 @@ if( JsVars.fhir !== undefined ) {
             var grid         = $("#grid-sejours").dxDataGrid("instance"),
                 selectedRows = grid.getSelectedRowsData();
             selectedRows.forEach(function(el) {
-                console.log(el);
                 var url = "/archive";
                 $.ajax({
                     type: "POST",
                     url: url,
                     data: { sejour_id: el.id }
                 })
-                    .done(function(fhir) {
-                        console.log(fhir);
-                    })
-                    .fail(function(result) {
-                        console.log("error");
-                    });
+                .done(function(req, res) {
+                    //$(el).remove();
+                    console.log(res);
+                })
+                .fail(function() {
+                    console.log("error");
+                });
             });
         }
     });

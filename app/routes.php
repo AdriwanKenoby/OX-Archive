@@ -18,8 +18,7 @@ $app->before(function (Request $request) use ($app) {
 $app->get('/', "Archivage\Controller\HomeController::indexAction")
 ->bind('home');
 
-$app->post('/', "Archivage\Controller\HomeController::indexAction")
-->bind('search_by_period');
+$app->post('/', "Archivage\Controller\HomeController::indexAction");
 
 // Login form
 $app->get('/login', "Archivage\Controller\HomeController::loginAction")
@@ -44,8 +43,9 @@ $app->get('/admin/user/{id}/delete', "Archivage\Controller\AdminController::dele
 $app->get('/search', "Archivage\Controller\HomeController::searchAction")
 ->bind('search_archive');
 
-$app->post('/search', "Archivage\Controller\HomeController::searchAction")
-->bind('result_search_archive');
+$app->post('/search', "Archivage\Controller\HomeController::searchAction");
+
+$app->post('/archive', "Archivage\Controller\HomeController::archiveAction");
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

@@ -4,6 +4,7 @@ namespace Archivage\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Archivage\Form\Type\SearchByPeriodType;
 use Archivage\Form\Type\SearchArchiveType;
 use PHPFHIRGenerated\PHPFHIRResponseParser;
@@ -66,6 +67,18 @@ class HomeController {
         return $app['twig']->render('search.html.twig', array(
             'form' => $form->createView()
         ));
+    }
+
+    public function archiveAction(Request $request, Application $app) {
+        if ($request->isXmlHttpRequest()) {
+            $post = array(
+                'sejour_id' => $request->request->get('sejour_id')
+            );
+            $reponse = new Response(json_encode($post));
+            $response->headers->set('Content-Type', 'application/json');
+            return $reponse;
+        }
+        return new Response("this is not an ajax request", 419);
     }
 
 }
