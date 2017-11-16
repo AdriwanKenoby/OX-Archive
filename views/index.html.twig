@@ -4,15 +4,29 @@
 
 {% block content %}
 
-    <div id="container-dates">
-        <div id="form-dates"></div>
-        <div id="button-dates"></div>
+    <div id="container-archivage">
+        <div id="container-dates" style="padding-top: 15px;">
+            <div id="form-dates"></div>
+            <div id="button-dates" style="margin-top: 15px;"></div>
+        </div>
+        <div id="container-sejours">
+            <div id="grid-sejours" style="margin-top: 20px;"></div>
+            <div id="button-archivage" style="margin-top: 15px;"></div>
+        </div>
+        <div id="loadpanel"></div>
     </div>
 
-    <div id="grid-sejours"></div>
-    <div id="button-archivage"></div>
-    <div id="loadpanel"></div>
     <script>
+
+        var loadpanel = $("#loadpanel").dxLoadPanel({
+
+            width: 300,
+            message: "Recherche des séjours...",
+            visible: false,
+            shading: true,
+            shadingColor: "rgba(0,0,0,0.4)",
+            position: { of: "#container-archivage" }
+        }).dxLoadPanel("instance");
 
         $(function() {
 
@@ -21,7 +35,6 @@
                 showColonAfterLabel: false,
                 alignItemLabels: true,
                 validationGroup: "validationGroup",
-                colCount: 2,
                 items: [
                     {
                         label: { text: "Date de début" },
@@ -65,9 +78,12 @@
 
                     if (result.isValid) {
 
+                        loadpanel.show();
+
                         var form = $("#form-dates").dxForm("instance"),
                             data = form.option("formData"),
                             url  = "http://localhost/mediboard/index.php?login=univlr:lrUniv17&m=TP1&tab=Encounter";
+
                         $.ajax({
 
                             type: "GET",
@@ -79,24 +95,15 @@
                             }
 
                         })
-                        .done(function(result) { archivage(result); })
+                        .done(function(result) { archivage(result); loadpanel.hide(); })
                         .fail(function(result) {
 
                             console.log(result);
+                            loadpanel.hide();
                         });
                     }
                 }
             });
-
-            var loadpanel = $("#loadpanel").dxLoadPanel({
-
-                width: 300,
-                message: "Chargement...",
-                visible: false,
-                shading: true,
-                shadingColor: "rgba(0,0,0,0.4)",
-                position: { of: "#container-dates" }
-            }).dxLoadPanel("instance");
         });
 
         function archivage(result) {
@@ -105,7 +112,13 @@
 
             result.entry.forEach(function(el) {
 
-                data.push({ entree: el.resource.period.start, sortie: el.resource.period.end, id: el.resource.id, patient: el.resource.subject.display });
+                data.push({
+
+                    entree: el.resource.period.start,
+                    sortie: el.resource.period.end,
+                    id: el.resource.id,
+                    patient: el.resource.subject.display
+                });
             });
 
             $("#grid-sejours").dxDataGrid({
@@ -129,17 +142,14 @@
                     {
                         dataField: "entree",
                         caption: "Entrée",
-                        width: 300,
                         dataType: "date"
                     },
                     {
                         dataField: "sortie",
-                        width: 300,
                         dataType: "date"
                     },
                     {
                         dataField: "patient",
-                        width: 300
                     }
                 ]
             });
@@ -150,6 +160,9 @@
                 type: "success",
                 onClick: function(e) {
 
+                    loadpanel.show();
+                    loadpanel.option("message", "Récupération des documents...");
+
                     var grid         = $("#grid-sejours").dxDataGrid("instance"),
                         selectedRows = grid.getSelectedRowsData();
 
@@ -157,7 +170,9 @@
 
                         getDocuments(el)
                         .done(function(result) {
-                            console.log(result);
+
+                            //console.log(result);
+                            loadpanel.option("message", "Création des archives...");
                             var docs = result.entry,
                                 a = {
 
@@ -168,7 +183,6 @@
                                     documents: docs
                                 },
                                 str = JSON.stringify(a);
-                            //console.log(str);
 
                             $.ajax({
 
@@ -179,22 +193,30 @@
 
                                     200: function() {
 
-                                        console.log("success statusCode")
+                                        loadpanel.option("indicatorSrc", "../images/check.png");
+                                        loadpanel.option("message", "Le dossier du patient " +a.patient+ " a été archivé");
+                                        setTimeout(function() { loadpanel.hide(); }, 3000);
                                     },
                                     400: function() {
 
-                                        console.log("fail dir statusCode")
+                                        loadpanel.option("indicatorSrc", "../images/banned.png");
+                                        loadpanel.option("message", "Le dossier d'archive existe déjà");
+                                        setTimeout(function() { loadpanel.hide(); }, 3000);
                                     },
                                     401: function() {
 
-                                        console.log("fail file statusCode")
+                                        loadpanel.option("indicatorSrc", "../images/banned.png");
+                                        loadpanel.option("message", "Le fichier à enregistrer existe déjà");
+                                        setTimeout(function() { loadpanel.hide(); }, 3000);
                                     }
                                 }
                             });
                         })
                         .fail(function(result) {
 
-                            console.log(result);
+                            loadpanel.option("indicatorSrc", "../images/banned.png");
+                            loadpanel.option("message", "Erreur lors de la récupération des fichiers");
+                            setTimeout(function() { loadpanel.hide(); }, 3000);
                         });
                     });
                 }

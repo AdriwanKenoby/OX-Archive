@@ -39,10 +39,10 @@ class Archivage {
                 }
 
                 $file = $doc->resource->content[0]->attachment->data;
-                //$name = $doc->resource->content[0]->attachment->description;
-                $name = "CompteRendu-" .$idSejour;
-                $fileName = $name. "." .$mime;
-                $filePath = $dirPath. "/" . $name;
+                $fileName = $doc->resource->description;
+                //$name = "CompteRendu-" .$idSejour;
+                //$fileName = $name. "." .$mime;
+                $filePath = $dirPath. "/" . $fileName;
 
                 if (!file_exists($filePath)) {
 
