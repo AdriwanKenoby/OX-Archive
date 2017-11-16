@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Archivage\Form\Type\SearchByPeriodType;
 use Archivage\Form\Type\SearchArchiveType;
-use PHPFHIRGenerated\PHPFHIRResponseParser;
+//use PHPFHIRGenerated\PHPFHIRResponseParser;
 
 class HomeController {
 
@@ -40,7 +40,7 @@ class HomeController {
             $fhir_response = $app['mediboard_client']->get(
                 'index.php?login='.$app['mediboard_login'].':'.$app['mediboard_pass'].
                 '&m='.$app['mediboard_module'].
-                '&tab='.$app['mediboard_tab'].
+                '&tab='.$app['mediboard_tab_encounter'].
                 '&date_min='.$data['date_min']->format('Y-m-d').
                 '&date_max='.$data['date_max']->format('Y-m-d')
             );
@@ -71,12 +71,40 @@ class HomeController {
 
     public function archiveAction(Request $request, Application $app) {
         if ($request->isXmlHttpRequest()) {
-            $post = array(
-                'sejour_id' => $request->request->get('sejour_id')
+            $sejour_id = $request->request->get('sejour_id');
+
+            $fhir_response = $app['mediboard_client']->get(
+                'index.php?login='.$app['mediboard_login'].':'.$app['mediboard_pass'].
+                '&m='.$app['mediboard_module'].
+                '&tab='.$app['mediboard_tab_document_reference'].
+                '&sejour_id='.$sejour_id
             );
-            $reponse = new Response(json_encode($post));
-            $response->headers->set('Content-Type', 'application/json');
-            return $reponse;
+            $fhir_str = (string)$fhir_response->getBody();
+            //$parser = new PHPFHIRResponseParser();
+            $fhir_object = json_decode($fhir_str);
+
+            $attachment = $fhir_object->entry[0]->resource->content[0]->attachment;
+            $imageData = $attachment->data;
+            $contentType = $attachment->contentType;
+            $title = $fhir_object->entry[0]->resource->description;
+
+            $hash = $attachment->hash;
+            $filepath = __DIR__.'/../../../archives/'.$title;
+
+            if (!file_exists($filepath)) {
+                file_put_contents($filepath, base64_decode($imageData));
+                $token = $app['security.token_storage']->getToken();
+                if (null !== $token) {
+                    $user = $token->getUser();
+                }
+                $app['monolog.prod']->info(sprintf("User '%s' has download archive %s.", $user->getUsername(), realpath($filepath)));
+                $app['search_engine']->index($filepath, array(
+                    "hash" => $hash,
+                    "title" => $title
+                ));
+            }
+
+            return new Reponse();
         }
         return new Response("this is not an ajax request", 419);
     }

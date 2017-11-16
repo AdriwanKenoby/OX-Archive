@@ -44,8 +44,8 @@ $app['mediboard_host'] = "http://10.13.66.101/mediboard/";
 $app['mediboard_login'] = "univlr";
 $app['mediboard_pass'] = "lrUniv17";
 $app['mediboard_module'] = "tp1_mjahed_veteau";
-$app['mediboard_tab'] = "Encounter";
-
+$app['mediboard_tab_encounter'] = "Encounter";
+$app['mediboard_tab_document_reference'] = "DocumentReference";
 $app['mediboard_client'] = new Client([
     // Base URI is used with relative requests
     'base_uri' => $app['mediboard_host']

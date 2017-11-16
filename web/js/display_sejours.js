@@ -11,7 +11,9 @@ if( JsVars.fhir !== undefined ) {
             entree: el.resource.period.start,
             sortie: el.resource.period.end,
             id: el.resource.id,
-            status: el.resource.status
+            status: el.resource.status,
+            ref_patient: el.resource.subject.reference,
+            name: el.resource.subject.display
         });
     });
 
@@ -48,6 +50,18 @@ if( JsVars.fhir !== undefined ) {
                 caption: "Status",
                 width: 100,
                 dataType: "string"
+            },
+            {
+                dataField: "ref_patient",
+                caption: "Reference Patient",
+                width: 100,
+                dataType: "string"
+            },
+            {
+                dataField: "name",
+                caption: "nom du patient",
+                width: 100,
+                dataType: "string"
             }
         ]
     });
@@ -65,7 +79,7 @@ if( JsVars.fhir !== undefined ) {
                     url: url,
                     data: { sejour_id: el.id }
                 })
-                .done(function(req, res) {
+                .done(function(res) {
                     //$(el).remove();
                     console.log(res);
                 })
