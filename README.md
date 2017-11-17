@@ -73,6 +73,7 @@ Give an example
 
 You have to install content of mediboard_side directory on a module, see
 * [Medibaord](http://mediboard.org/) - for more info
+* You can fully configure environnement in app.php
 
 ## Built With
 
