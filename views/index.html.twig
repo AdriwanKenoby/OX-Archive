@@ -4,26 +4,18 @@
 
 {% block content %}
 
-    {% for flashMessage in app.session.flashbag.get('error') %}
-        <div class="alert alert-danger">
-          {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% for flashMessage in app.session.flashbag.get('success') %}
-        <div class="alert alert-success">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
-
     {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
     <form action="#" method="post">
         {{ form_widget(form) }}
         <input type="submit" name="submit" />
     </form>
-    
-    <div id="grid-sejours"></div>
-    <div id="button-archivage"></div>
+
+    <div id="container-sejours">
+        <div id="grid-sejours" style="margin-top: 20px;"></div>
+        <div id="button-archivage" style="margin-top: 15px;"></div>
+    </div>
+    <div id="loadpanel"></div>
+
     <script src="{{ asset('js/display_sejours.js') }}"></script>
 
 {% endblock %}

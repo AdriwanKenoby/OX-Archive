@@ -48,28 +48,39 @@ if( JsVars.fhir !== undefined ) {
             {
                 dataField: "status",
                 caption: "Status",
-                width: 100,
+                width: 150,
                 dataType: "string"
             },
             {
                 dataField: "ref_patient",
                 caption: "Reference Patient",
-                width: 100,
+                width: 150,
                 dataType: "string"
             },
             {
                 dataField: "name",
                 caption: "nom du patient",
-                width: 100,
+                width: 150,
                 dataType: "string"
             }
         ]
     });
 
+    var loadpanel = $("#loadpanel").dxLoadPanel({
+        width: 300,
+        message: "Recherche des séjours...",
+        visible: false,
+        shading: true,
+        shadingColor: "rgba(0,0,0,0.4)",
+        position: { of: "#container-sejours" }
+    }).dxLoadPanel("instance");
+
     $("#button-archivage").dxButton({
         text: "Archiver",
         type: "success",
         onClick: function (e) {
+            loadpanel.show();
+            loadpanel.option("message", "Récupération des documents...");
             var grid         = $("#grid-sejours").dxDataGrid("instance"),
                 selectedRows = grid.getSelectedRowsData();
             selectedRows.forEach(function(el) {
@@ -80,11 +91,14 @@ if( JsVars.fhir !== undefined ) {
                     data: { sejour_id: el.id }
                 })
                 .done(function(res) {
-                    //$(el).remove();
-                    console.log(res);
+                    var fhir = JSON.parse(res);
+                    loadpanel.option("message", "Création de l'archive "+ fhir.entry[0].resource.description);
+                    setTimeout(function() { loadpanel.hide(); }, 3000);
                 })
-                .fail(function() {
-                    console.log("error");
+                .fail(function(res) {
+                    loadpanel.option("indicatorSrc", "../images/banned.png");
+                    loadpanel.option("message", "Le fichier "+res.responseJSON+" est déjà archiver");
+                    setTimeout(function() { loadpanel.hide(); }, 3000);
                 });
             });
         }

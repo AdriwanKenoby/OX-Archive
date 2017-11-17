@@ -5,6 +5,7 @@ namespace Archivage\Controller;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Archivage\Form\Type\SearchByPeriodType;
 use Archivage\Form\Type\SearchArchiveType;
 //use PHPFHIRGenerated\PHPFHIRResponseParser;
@@ -34,7 +35,6 @@ class HomeController {
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // perform some action...
             $data = $form->getData();
 
             $fhir_response = $app['mediboard_client']->get(
@@ -83,30 +83,38 @@ class HomeController {
             //$parser = new PHPFHIRResponseParser();
             $fhir_object = json_decode($fhir_str);
 
-            $attachment = $fhir_object->entry[0]->resource->content[0]->attachment;
+            $resource =  $fhir_object->entry[0]->resource;
+            $attachment = $resource->content[0]->attachment;
             $imageData = $attachment->data;
             $contentType = $attachment->contentType;
-            $title = $fhir_object->entry[0]->resource->description;
-
+            $title = $resource->description;
             $hash = $attachment->hash;
+            $encounter = $resource->context->encounter->reference;
+            $patient = $resource->context->sourcePatientInfo->reference;
+
             $filepath = __DIR__.'/../../../archives/'.$title;
 
-            if (!file_exists($filepath)) {
-                file_put_contents($filepath, base64_decode($imageData));
-                $token = $app['security.token_storage']->getToken();
-                if (null !== $token) {
-                    $user = $token->getUser();
-                }
-                $app['monolog.prod']->info(sprintf("User '%s' has download archive %s.", $user->getUsername(), realpath($filepath)));
-                $app['search_engine']->index($filepath, array(
-                    "hash" => $hash,
-                    "title" => $title
-                ));
+            if (file_exists($filepath)) {
+                return new JsonResponse($title, 405);
             }
 
-            return new Reponse();
+            file_put_contents($filepath, base64_decode($imageData));
+            $token = $app['security.token_storage']->getToken();
+            if (null !== $token) {
+                $user = $token->getUser();
+            }
+
+            $app['monolog.prod']->info(sprintf("User '%s' has download archive %s.", $user->getUsername(), realpath($filepath)));
+            $app['search_engine']->index($filepath, array(
+                "hash" => $hash,
+                "title" => $title,
+                "encounter" => $encounter,
+                "patient" => $patient
+            ));
+
+            return new JsonResponse($fhir_str);
         }
-        return new Response("this is not an ajax request", 419);
+        return new Response("this is not an ajax request", 405);
     }
 
 }

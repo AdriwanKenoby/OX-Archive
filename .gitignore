@@ -1,3 +1,4 @@
-/archives/*
+/archives/
 /vendor/
-/var/*
+/var/
+/.idea/
