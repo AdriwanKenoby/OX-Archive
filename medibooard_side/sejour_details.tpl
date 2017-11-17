@@ -8,7 +8,7 @@
         <th>Consultation</th>
         <th>Patient</th>
         <th>Praticien</th>
-        <th>Date d'arrivée</th>
+        <th>Date d'arrivÃ©e</th>
     </tr>
     {{foreach from=$sejour->_ref_consultations item=_consultation}}
         <tr>
@@ -24,14 +24,14 @@
 
 <table class="tbl">
     <tr>
-        <th colspan="6">Opérations</th>
+        <th colspan="6">OpÃ©rations</th>
     </tr>
     <tr>
-        <th>Opérations</th>
+        <th>OpÃ©rations</th>
         <th>Patient</th>
         <th>Praticien</th>
         <th>Date</th>
-        <th>Temps opératoire</th>
+        <th>Temps opÃ©ratoire</th>
         <th>Actes CCAM</th>
     </tr>
     {{foreach from=$sejour->_ref_operations item=_operation}}

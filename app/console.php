@@ -6,9 +6,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
+// Ici on cree une nouvelle application en console independante de notre interface web
+// On pourrais en particulier imaginer une commande de purge
 $console = new Application('ox-archive', 'n/a');
 $console->getDefinition()->addOption(new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev'));
 $console->setDispatcher($app['dispatcher']);
+// Indexation de document dans elasticsearch
+// TODO add Array param to index extra field in elasticsearch
 $console
     ->register('archive:document:index')
     ->setDefinition(array(
@@ -20,7 +24,7 @@ $console
         $app['search_engine']->index($input->getArgument('document'));
     })
 ;
-
+// Recherche de document, il faut echapper les caractere speciaux
 $console
     ->register('archive:document:search')
     ->setDefinition(array(
@@ -35,7 +39,7 @@ $console
         }
     })
 ;
-
+// Supprimer un document de moteur d'indexation, ne supprime pas le document sur le systeme de fichier
 $console
     ->register('archive:document:delete')
     ->setDefinition(array(
@@ -48,6 +52,7 @@ $console
     })
 ;
 
+// generation des classes FHIR
 $console
     ->register('archive:fhir:generate-classes')
     ->setDefinition(array(

@@ -1,4 +1,4 @@
-// Récupération des variables définies dans le service js_vars
+// Récupération des variables définies dans le js_vars inclu dans le DOM dans layout.html.twig
 var JsVars = jQuery('#js-vars').data('vars');
 
 if( JsVars.fhir !== undefined ) {
@@ -79,10 +79,15 @@ if( JsVars.fhir !== undefined ) {
         text: "Archiver",
         type: "success",
         onClick: function (e) {
-            loadpanel.show();
+
             loadpanel.option("message", "Récupération des documents...");
             var grid         = $("#grid-sejours").dxDataGrid("instance"),
                 selectedRows = grid.getSelectedRowsData();
+
+            if(selectedRows.length > 0) {
+                loadpanel.show();
+            }
+
             selectedRows.forEach(function(el) {
                 var url = "/archive";
                 $.ajax({
@@ -90,17 +95,19 @@ if( JsVars.fhir !== undefined ) {
                     url: url,
                     data: {
                         sejour_id: el.id,
-                        patient_name: el.name 
+                        patient_name: el.name
                     }
                 })
                 .done(function(res) {
-                    var fhir = JSON.parse(res);
-                    loadpanel.option("message", "Création de l'archive "+ fhir.entry[0].resource.description);
+                    //var fhir = JSON.parse(res);
+                    //console.log(res);
+                    loadpanel.option("message", "Création de l'archive "+ res);
                     setTimeout(function() { loadpanel.hide(); }, 3000);
                 })
                 .fail(function(res) {
+                    //console.log(res);
                     loadpanel.option("indicatorSrc", "../images/banned.png");
-                    loadpanel.option("message", "Le fichier "+res.responseJSON+" est déjà archiver");
+                    loadpanel.option("message", "Le fichier "+res.responseJSON+" est déjà archivé");
                     setTimeout(function() { loadpanel.hide(); }, 3000);
                 });
             });

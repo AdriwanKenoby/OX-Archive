@@ -5,11 +5,13 @@
  * Date: 15/11/17
  * Time: 14:55
  */
-
+// On recupere un parametre de requete
 $sejour_id = CValue::get('sejour_id');
+// On charge le sejour associe
 $sejour = new CSejour();
 $sejour->load($sejour_id);
 
+// Les refs associees
 $sejour->loadRefPatient();
 $sejour->loadRefsOperations();
 $sejour->_ref_patient->loadRefDossierMedical();
@@ -25,19 +27,22 @@ foreach ($sejour->_ref_operations as $operation ) {
 }
 
 $cr = new CCompteRendu();
+// On recupere les compte rendu associes au sejour
 $cr->setObject($sejour);
 $crs = $cr->loadMatchingList();
 
-
+// Un tableau pour stocker nos resultats
 $result = array();
+
 foreach ( $crs as $_cr ) {
     $idex = CIdSante400::getMatch($sejour->_class, 'archive', $_cr->_guid, $sejour->_id);
-
+    // Si une archive associe a ce comte rendu a deja ete cree on le charge dans notre tab de resultats
     if ($idex !== null) {
         array_push($result, $_cr);
     }
 }
 
+// On commence a construire la structure de l'objet json a renvoyer
 $reponse = array(
     "resourceType" => "Bundle",
     "type" => "searchset",
@@ -45,11 +50,13 @@ $reponse = array(
     "entry" => array()
 );
 
+// Si il n' y a des resultats on ne genere pas les documents (ne pas ecraser ou dupliquer)
 if (!empty($result)) {
 
     foreach ($result as $c) {
 
         $c->makePDFPreview(true);
+        // on rempli notre reponse correspondant a la norme FHIR
         array_push($reponse['entry'], array(
             "resource" => array(
                 "resourceType" => "DocumentReference",
@@ -76,7 +83,7 @@ if (!empty($result)) {
             )
         ));
     }
-} else {
+} else { // Sinon on genere le pdf les id400 references et on construit la reponse
     $template = new CSmartyDP();
     $template->assign('sejour', $sejour);
     $contentHTML = new CContentHTML();
@@ -126,6 +133,7 @@ if (!empty($result)) {
     ));
 }
 
+// Envoi de a reponse
 CApp::json($reponse);
 
 //echo json_encode($reponse, JSON_UNESCAPED_SLASHES);

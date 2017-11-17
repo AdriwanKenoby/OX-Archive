@@ -6,15 +6,17 @@
  * Time: 09:13
  */
 
+// On recupere nos parametre de requete
 $date_min = CValue::get("date_min");
 $date_max = CValue::get("date_max");
 
+// On charge les sejours associees
 $where = array();
 $where["sejour.entree"] = "BETWEEN '$date_min' AND '$date_max'";
 $sejour  = new CSejour();
 $sejours = $sejour->loadList($where);
 
-
+// Construction de la reponse
 $reponse = array(
     "resourceType" => "Bundle",
     "entry" => array()
@@ -40,4 +42,5 @@ foreach ($sejours as $sejour) {
     ));
 }
 
+// envoi de la reponse en json
 CApp::json($reponse);

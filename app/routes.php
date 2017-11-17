@@ -11,16 +11,21 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Archivage\Entity\User;
 use Archivage\Form\Type\UserType;
 
+// On peut remplir notre classe app['js_vars'] avec des variables qui seront ensuite accssible en JS
 $app->before(function (Request $request) use ($app) {
     // set some global javascript variable
+    //$app['js_vars']->someExample = $app['someParameter'] ;
 });
 
+// On defini nos routes et on leur associe u controller i.e. une fonction charger de repondre a la requete
+// Page d'acceuil
 $app->get('/', "Archivage\Controller\HomeController::indexAction")
 ->bind('home');
 
+// Recherche de sejour compris entre plusieur date
 $app->post('/', "Archivage\Controller\HomeController::indexAction");
 
-// Login form
+// page de login
 $app->get('/login', "Archivage\Controller\HomeController::loginAction")
 ->bind('login');
 
@@ -40,13 +45,17 @@ $app->match('/admin/user/{id}/edit', "Archivage\Controller\AdminController::edit
 $app->get('/admin/user/{id}/delete', "Archivage\Controller\AdminController::deleteUserAction")
 ->bind('admin_user_delete');
 
+// Acces au moteur de recherche
 $app->get('/search', "Archivage\Controller\HomeController::searchAction")
 ->bind('search_archive');
 
+// Reponse a une recherche
 $app->post('/search', "Archivage\Controller\HomeController::searchAction");
 
+// Appel ajax pour archivage a ce controller
 $app->post('/archive', "Archivage\Controller\HomeController::archiveAction");
 
+// differentes page en cas d'erreurs
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
