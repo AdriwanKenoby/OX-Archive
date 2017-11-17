@@ -29,6 +29,7 @@
         </script>
     </head>
     <body>
+    <!-- Ici on inclu dans le DOM le contenu de notre classe js_vars utilise pour passer des variables du php au javascript -->
     <div id="js-vars" data-vars="{{ js_vars|json_encode|e('html') }}" />
     <div class="container">
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">

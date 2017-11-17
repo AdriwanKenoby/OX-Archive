@@ -122,7 +122,7 @@ class HomeController {
             $encounter = $resource->context->encounter->reference;
             $patient = $resource->context->sourcePatientInfo->reference;
 
-            $filepath = __DIR__.'/../../../archives/'.$title;
+            $filepath = $app['archive_directory'].'/'.$title;
 
             // Si le fichier existe on renvoi une erreur avec le nom du fichier
             // On pourrait ajouter le path

@@ -47,33 +47,27 @@ you can generate FHIR classes but it is not use for instance in the project
 php bin/console archive:fhir:generate-classes
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Not implemented yet
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
+Not implemented yet
 
 ## Deployment
 
 You have to install content of mediboard_side directory on a module, see
 * [Medibaord](http://mediboard.org/) - for more info
 * You can fully configure environnement in app.php
+* create directory archive, configure it in app.php
+
+```
+mkdir archives
+## replcace HTTPD_USER by www-data on debian
+setfacl -R -m u:user:rwX -m u:HTTPD_USER:rwX archives
+setfacl -dR -m u:user:rwX -m u:HTTPD_USER:rwX archives
+```
 
 ## Built With
 
