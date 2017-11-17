@@ -88,7 +88,10 @@ if( JsVars.fhir !== undefined ) {
                 $.ajax({
                     type: "POST",
                     url: url,
-                    data: { sejour_id: el.id }
+                    data: {
+                        sejour_id: el.id,
+                        patient_name: el.name 
+                    }
                 })
                 .done(function(res) {
                     var fhir = JSON.parse(res);

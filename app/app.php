@@ -40,7 +40,7 @@ $app['dao.user'] = function ($app) {
     return new Archivage\DAO\UserDAO($app['db']);
 };
 
-$app['mediboard_host'] = "http://192.168.1.21/mediboard/";
+$app['mediboard_host'] = "http://10.13.45.35/mediboard/";
 $app['mediboard_login'] = "univlr";
 $app['mediboard_pass'] = "lrUniv17";
 $app['mediboard_module'] = "tp1_mjahed_veteau";

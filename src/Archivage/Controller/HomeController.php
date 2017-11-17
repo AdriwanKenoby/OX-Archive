@@ -71,13 +71,17 @@ class HomeController {
 
     public function archiveAction(Request $request, Application $app) {
         if ($request->isXmlHttpRequest()) {
-            $sejour_id = $request->request->get('sejour_id');
+            $post = array(
+                'sejour_id' => $request->request->get('sejour_id'),
+                'patient_name' => $request->request->get('patient_name')
+            );
+
 
             $fhir_response = $app['mediboard_client']->get(
                 'index.php?login='.$app['mediboard_login'].':'.$app['mediboard_pass'].
                 '&m='.$app['mediboard_module'].
                 '&tab='.$app['mediboard_tab_document_reference'].
-                '&sejour_id='.$sejour_id
+                '&sejour_id='.$post['sejour_id']
             );
             $fhir_str = (string)$fhir_response->getBody();
             //$parser = new PHPFHIRResponseParser();
@@ -109,7 +113,7 @@ class HomeController {
                 "hash" => $hash,
                 "title" => $title,
                 "encounter" => $encounter,
-                "patient" => $patient
+                "patient" => $post['patient_name']
             ));
 
             return new JsonResponse($fhir_str);
