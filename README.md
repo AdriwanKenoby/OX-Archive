@@ -21,10 +21,10 @@ Ce projet a été realiser par des étudants de l' Université de La Rochelle po
 In /etc/hosts define a dns for your website, i.e ox-archive in this case
 ### Prerequisites
 
-Apache
-php
-sqlite
-elasticsearsh
+* Apache
+* php
+* sqlite
+* elasticsearsh
 
 ### Installing
 
