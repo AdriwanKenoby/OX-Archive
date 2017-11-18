@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Explorateur{% endblock %}
+
+{% block content %}
+
+    <div id="container" style="display: flex; justify-content: space-between; margin-top: 50px;">
+        <div id="tree-archives"></div>
+        <div id="archive-details" class="hidden" style="width: 800px;">
+            <embed width='100%' height='500px' src='' type='application/pdf'></embed>
+            <div class="name"></div>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/explore.js') }}"></script>
+
+{% endblock %}

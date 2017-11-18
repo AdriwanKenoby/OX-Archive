@@ -154,4 +154,34 @@ class HomeController {
         return new Response("this is not an ajax request", 405);
     }
 
+    /**
+     * Appel ajax sur la grid.
+     * @param Request $request Incoming request
+     * @param Application $app Silex application
+     */
+    public function exploreAction(Request $request, Application $app) {
+        $tree = $this->dirToArray($app['archive_directory']);
+        $app['js_vars']->tree = json_encode($tree);
+        return $app['twig']->render('explore.html.twig');
+    }
+
+    /**
+     * @param $dir chemin du dossier a explorer
+     * @return array contenant l'arborescence du dossier a explorer
+     */
+    private function dirToArray($dir) {
+        $result = [];
+        $cdir = scandir($dir);
+
+        foreach ($cdir as $key => $value) {
+            if (!in_array($value,array(".",".."))) {
+                if (is_dir($dir . DIRECTORY_SEPARATOR . $value)) {
+                    $result[$value] = $this->dirToArray($dir . DIRECTORY_SEPARATOR . $value);
+                } else {
+                    $result[] = $value;
+                }
+            }
+        }
+        return $result;
+    }
 }

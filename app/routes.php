@@ -14,7 +14,7 @@ use Archivage\Form\Type\UserType;
 // On peut remplir notre classe app['js_vars'] avec des variables qui seront ensuite accssible en JS
 $app->before(function (Request $request) use ($app) {
     // set some global javascript variable
-    //$app['js_vars']->someExample = $app['someParameter'] ;
+    $app['js_vars']->archiveDirectory = $app['archive_directory'] ;
 });
 
 // On defini nos routes et on leur associe u controller i.e. une fonction charger de repondre a la requete
@@ -55,7 +55,11 @@ $app->post('/search', "Archivage\Controller\HomeController::searchAction");
 // Appel ajax pour archivage a ce controller
 $app->post('/archive', "Archivage\Controller\HomeController::archiveAction");
 
-// differentes page en cas d'erreurs
+// Explorer l'arborescence du dossier d'archive
+$app->get('/explore', "Archivage\Controller\HomeController::exploreAction")
+->bind('explore_archive');
+
+// differentes page selon le code HTTP en cas d'erreur
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
