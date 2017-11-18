@@ -78,7 +78,7 @@ setfacl -dR -m u:user:rwX -m u:HTTPD_USER:rwX archives
 
 * **Véteau Adrien** - *Initial work* - [AdriwanKenoby](https://github.com/AdriwanKenoby)
 * **Romain Badens** - *Initial work* - [FrOOmiX](https://github.com/FrOOmiX)
-* **Steve Dechaume** - *Initial work*
+* **Steven Dechaume** - *Initial work*
 ## License
 
 * @copyright  2015 Christophe Demko christophe.demko@univ-lr.fr
