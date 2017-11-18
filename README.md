@@ -32,6 +32,7 @@ clone or download then use composer install
 create the archives directory where you want to put it.
 config the application in app.php and extra config in the config directory
 create database structure and store some users for test purpose
+
 ```
 git clone git@github.com:AdriwanKenoby/OX-Archive.git
 cd OX-Archive
@@ -45,6 +46,13 @@ you can generate FHIR classes but it is not use for instance in the project
 
 ```
 php bin/console archive:fhir:generate-classes
+```
+
+Correct a bug in vendor/phpoffice/phpword/PhpWord/Shared/Html.php in order to use HtmlParser
+```
+//$dom->loadXML($html);
+libxml_use_internal_errors(true);
+$dom->loadHTML($html);
 ```
 
 ## Running the tests
@@ -79,6 +87,7 @@ setfacl -dR -m u:user:rwX -m u:HTTPD_USER:rwX archives
 * **Véteau Adrien** - *Initial work* - [AdriwanKenoby](https://github.com/AdriwanKenoby)
 * **Romain Badens** - *Initial work* - [FrOOmiX](https://github.com/FrOOmiX)
 * **Steven Dechaume** - *Initial work*
+* **Mahmoud Mjahed** - *Initial work*
 ## License
 
 * @copyright  2015 Christophe Demko christophe.demko@univ-lr.fr
