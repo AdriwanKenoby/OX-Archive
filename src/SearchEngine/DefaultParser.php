@@ -16,7 +16,6 @@ class DefaultParser extends Parser {
      *
      * @param   string  $path  The pathname
      *
-     * @return  array  Document meta data
      */
     public function parse($path) {
         DefaultParser::$type = ucfirst(pathinfo($path)['extension']);

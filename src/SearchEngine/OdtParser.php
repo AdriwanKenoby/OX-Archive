@@ -13,18 +13,18 @@ namespace SearchEngine;
  *
  * @author adriwonkenobe
  */
-class DocxParser extends Parser {
+class OdtParser extends Parser {
 
     use TextParserTrait;
     
     private $parser;
-    protected static $type = 'docx';
+    protected static $type = 'odt';
 
     protected function getParser() {
         if (!isset($this->parser)) {
-            return $this->parser  = \PhpOffice\PhpWord\IOFactory::createReader('Word2007');
+            return $this->parser  = \PhpOffice\PhpWord\IOFactory::createReader('ODText');
         }
         return $this->parser;
-    }        
+    }
 
 }
