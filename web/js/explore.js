@@ -7,7 +7,6 @@ $(function () {
      */
     var tree = JSON.parse(JsVars.tree),
             temp = [{
-
                     id: "0",
                     text: "Archives",
                     items: []
@@ -40,7 +39,7 @@ $(function () {
 
                     id: "0_" + index + "_" + index,
                     text: tree[el][0],
-                    location: archiveDirectory + el + "/" + tree[el][0]
+                    location: archiveDirectory + '/' + el + '/' + tree[el][0]
                 }]
         });
     });

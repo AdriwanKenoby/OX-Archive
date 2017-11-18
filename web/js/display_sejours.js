@@ -99,16 +99,15 @@ if( JsVars.fhir !== undefined ) {
                     }
                 })
                 .done(function(res) {
-                    //var fhir = JSON.parse(res);
-                    //console.log(res);
+                    //var fhir = JSON.parse(res);                    
+                    loadpanel.option("indicatorSrc", "../images/check.png");
                     loadpanel.option("message", "Création de l'archive "+ res);
-                    setTimeout(function() { loadpanel.hide(); }, 3000);
+                    setTimeout(function() { loadpanel.hide(); }, 5000);
                 })
-                .fail(function(res) {
-                    //console.log(res);
+                .fail(function(res) {                    
                     loadpanel.option("indicatorSrc", "../images/banned.png");
                     loadpanel.option("message", "Le fichier "+res.responseJSON+" est déjà archivé");
-                    setTimeout(function() { loadpanel.hide(); }, 3000);
+                    setTimeout(function() { loadpanel.hide(); }, 5000);
                 });
             });
         }

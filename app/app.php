@@ -46,7 +46,7 @@ $app['dao.user'] = function ($app) {
 };
 
 // Vous pouvez configurer l'applcation
-$app['archive_directory'] = __DIR__.'/../archives';
+$app['archive_directory'] = realpath(__DIR__.'/../archives');
 // l'adresse dns de mediboard
 $app['mediboard_host'] = "http://192.168.1.21/mediboard/";
 // login mediboard

@@ -116,20 +116,25 @@ class HomeController {
             $resource =  $fhir_object->entry[0]->resource;
             $attachment = $resource->content[0]->attachment;
             $imageData = $attachment->data;
-            $contentType = $attachment->contentType;
+            //$contentType = $attachment->contentType;
             $title = $resource->description;
             $hash = $attachment->hash;
             $encounter = $resource->context->encounter->reference;
-            $patient = $resource->context->sourcePatientInfo->reference;
-
-            $filepath = $app['archive_directory'].'/'.$title;
-
+            //$patient = $resource->context->sourcePatientInfo->reference;
+            
+            $dir = $app['archive_directory'].'/'.$post['sejour_id'];
+            $filepath = $dir.'/'.$title;
             // Si le fichier existe on renvoi une erreur avec le nom du fichier
-            // On pourrait ajouter le path
+            // On pourrait ajouter d'autre information
             if (file_exists($filepath)) {
                 return new JsonResponse($title, 405);
             }
-
+            
+            // On verifie si le sejour est deja en partie archiver
+            if (!is_dir($dir)) {
+                mkdir($dir);
+            }
+            
             // Sinon on creer le fichier
             file_put_contents($filepath, base64_decode($imageData));
             // Recuperation de l'utilsateur en cours de session
@@ -145,7 +150,7 @@ class HomeController {
             $app['search_engine']->index($filepath, array(
                 "hash" => $hash,
                 "title" => $title,
-                "encounter" => $encounter,
+                "encounter" => $post['sejour_id'],
                 "patient" => $post['patient_name']
             ));
             // On renvoi une reponse, pourrais être plus elaborer ..
