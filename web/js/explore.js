@@ -1,16 +1,17 @@
-var JsVars = jQuery('#js-vars').data('vars');
-    archiveDirectory = JsVars.archiveDirectory;
+var JsVars = jQuery('#js-vars').data('vars'),
+    archiveDirectory = JsVars.archiveDirectory,
+    tree = JSON.parse(JsVars.tree);
+
 $(function () {
 
     /**
      * Recupere la variable tree de notre "Bag" JsVars
      */
-    var tree = JSON.parse(JsVars.tree),
-            temp = [{
-                    id: "0",
-                    text: "Archives",
-                    items: []
-                }];
+    var temp = [{
+        id: "0",
+        text: "Archives",
+        items: []
+    }];
     /**
      * Recupere les clefs du tableau retourne par le json
      * Chaque clef est en fait le nom d'un dossier
@@ -29,8 +30,7 @@ $(function () {
      * et ne fonctionne que pour des dossiers
      * direct de /archives ayant un seul fichier dedans
      */
-    $.each(keys, function (index, el) {
-
+    $.each(keys, function (index, el) {        
         temp[0].items.push({
 
             id: "0_" + index,
@@ -61,7 +61,7 @@ $(function () {
         {
             id: "0_1",
             text: 14,
-            items: [{ 
+            items: [{
                 id: "0_1_1",
                 text: "CSejour-14.pdf",
                 location: "/OX-Archive/archives/14/CSejour-14.pdf"
