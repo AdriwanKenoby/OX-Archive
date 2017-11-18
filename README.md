@@ -82,4 +82,4 @@ setfacl -dR -m u:user:rwX -m u:HTTPD_USER:rwX archives
 ## License
 
 * @copyright  2015 Christophe Demko christophe.demko@univ-lr.fr
-* @license    The Engine kernel use to parse document in elasticsearch is licensed under the CeCILL-B_V1 License - see the [CeCILL-B_V1](http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.htmlThis) file for details
+* @license    The Engine kernel use to parse document in elasticsearch is licensed under the CeCILL-B_V1 License - see the [CeCILL-B_V1](http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html) file for details
