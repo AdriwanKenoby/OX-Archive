@@ -1,6 +1,3 @@
-[submodule "src/search-engine"]
-	path = src/search-engine
-	url = git@github.com:AdriwanKenoby/search-engine.git
 [submodule "src/SearchEngine"]
 	path = src/SearchEngine
 	url = git@github.com:AdriwanKenoby/search-engine.git
